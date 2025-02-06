@@ -1,0 +1,14 @@
+﻿https://stackoverflow.com/questions/75145252/installing-and-using-reportviewer-in-visual-studio-2022-windows-forms/75152761#75152761
+
+Visual Studio 2022 - RDLC reports and ReportViewer in Windows Forms
+Here is a step by step example:
+
+1. Install Microsoft RDLC Report Designer 2022, and restart VS.
+
+2. Create a new Windows Forms .NET Framework project.
+
+3. Install the Microsoft.ReportingServices.ReportViewerControl.Winforms NuGet package, which will add ReportViewer to the toolbox of your project.
+
+Note: Optional - You may want to install Microsoft.SqlServer.Types as well to get rid of a warning which complains about version of the library.
+
+PM> NuGet\Install-Package Microsoft.ReportingServices.ReportViewerControl.Winforms -Version 150.1652.0

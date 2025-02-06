@@ -1,0 +1,337 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E4138AEA-CA19-4B95-A4BC-3CFE3AD52D05}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>MPOS</RootNamespace>
+    <AssemblyName>MPOS</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Adapters\IExport.cs" />
+    <Compile Include="Controllers\Options.cs" />
+    <Compile Include="Database\Db.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Db.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="DTOs\ProductDtos.cs" />
+    <Compile Include="DTOs\StaticComponents.cs" />
+    <Compile Include="Entities\CategoryConnection.cs" />
+    <Compile Include="Entities\EmployeeConnection.cs" />
+    <Compile Include="Entities\IData.cs" />
+    <Compile Include="Entities\Notifications.cs" />
+    <Compile Include="Entities\ProductConnection.cs" />
+    <Compile Include="Entities\SettingConnection.cs" />
+    <Compile Include="Entities\StockConnection.cs" />
+    <Compile Include="Entities\SupplierConnection.cs" />
+    <Compile Include="Helpers\ComponentHelper.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\IFormats.cs" />
+    <Compile Include="Services\ICrudService.cs" />
+    <Compile Include="UserControllers\CardOrder.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControllers\CardOrder.Designer.cs">
+      <DependentUpon>CardOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControllers\Category.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControllers\Category.Designer.cs">
+      <DependentUpon>Category.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControllers\Customer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControllers\Customer.Designer.cs">
+      <DependentUpon>Customer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControllers\Dashboard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControllers\Dashboard.Designer.cs">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControllers\Employee.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControllers\Employee.Designer.cs">
+      <DependentUpon>Employee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControllers\Order.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControllers\Order.Designer.cs">
+      <DependentUpon>Order.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControllers\ProductCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControllers\ProductCard.Designer.cs">
+      <DependentUpon>ProductCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControllers\Products.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControllers\Products.Designer.cs">
+      <DependentUpon>Products.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControllers\Purchase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControllers\Purchase.Designer.cs">
+      <DependentUpon>Purchase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControllers\Setting.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControllers\Setting.Designer.cs">
+      <DependentUpon>Setting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControllers\Stock.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControllers\Stock.Designer.cs">
+      <DependentUpon>Stock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControllers\Supplier.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControllers\Supplier.Designer.cs">
+      <DependentUpon>Supplier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewReports\ViewReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewReports\ViewReport.Designer.cs">
+      <DependentUpon>ViewReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EmployeeListView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\EmployeeListView.Designer.cs">
+      <DependentUpon>EmployeeListView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\HomeView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\HomeView.Designer.cs">
+      <DependentUpon>HomeView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProductModify.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ProductModify.Designer.cs">
+      <DependentUpon>ProductModify.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Toast.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Toast.Designer.cs">
+      <DependentUpon>Toast.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="ReportInfo\OrderReport.rdlc" />
+    <EmbeddedResource Include="UserControllers\CardOrder.resx">
+      <DependentUpon>CardOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControllers\Category.resx">
+      <DependentUpon>Category.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControllers\Customer.resx">
+      <DependentUpon>Customer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControllers\Dashboard.resx">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControllers\Employee.resx">
+      <DependentUpon>Employee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControllers\Order.resx">
+      <DependentUpon>Order.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControllers\ProductCard.resx">
+      <DependentUpon>ProductCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControllers\Products.resx">
+      <DependentUpon>Products.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControllers\Purchase.resx">
+      <DependentUpon>Purchase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControllers\Setting.resx">
+      <DependentUpon>Setting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControllers\Stock.resx">
+      <DependentUpon>Stock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControllers\Supplier.resx">
+      <DependentUpon>Supplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewReports\ViewReport.resx">
+      <DependentUpon>ViewReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\EmployeeListView.resx">
+      <DependentUpon>EmployeeListView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\HomeView.resx">
+      <DependentUpon>HomeView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ProductModify.resx">
+      <DependentUpon>ProductModify.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Toast.resx">
+      <DependentUpon>Toast.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="Database\Db.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>Db.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Database\Db.dbml.layout">
+      <DependentUpon>Db.dbml</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-accept-48.png" />
+    <None Include="Resources\icons8-error-48.png" />
+    <None Include="Resources\icons8-warning-48.png" />
+    <None Include="Resources\icons8-cancel-24.png" />
+    <Content Include="ReportInfo\ReportInfo.txt" />
+    <Content Include="Resources\Icons\icons8-add-24.png" />
+    <Content Include="Resources\Icons\icons8-add-product-24.png" />
+    <Content Include="Resources\Icons\icons8-admin-settings-male-30.png" />
+    <Content Include="Resources\Icons\icons8-analytics-24.png" />
+    <Content Include="Resources\Icons\icons8-award-24.png" />
+    <Content Include="Resources\Icons\icons8-billing-of-a-restaurant-expenses-paid-in-cash-24.png" />
+    <Content Include="Resources\Icons\icons8-cancel-24.png" />
+    <Content Include="Resources\Icons\icons8-close-window-20.png" />
+    <Content Include="Resources\Icons\icons8-create-24.png" />
+    <Content Include="Resources\Icons\icons8-customer-24.png" />
+    <Content Include="Resources\Icons\icons8-dashboard-24.png" />
+    <Content Include="Resources\Icons\icons8-delete-24.png" />
+    <Content Include="Resources\Icons\icons8-edit-24.png" />
+    <Content Include="Resources\Icons\icons8-employee-24.png" />
+    <Content Include="Resources\Icons\icons8-gold-medal-24.png" />
+    <Content Include="Resources\Icons\icons8-log-out-24.png" />
+    <Content Include="Resources\Icons\icons8-microsoft-24.png" />
+    <Content Include="Resources\Icons\icons8-microsoft-365-24.png" />
+    <Content Include="Resources\Icons\icons8-microsoft-365-36.png" />
+    <Content Include="Resources\Icons\icons8-online-maintenance-portal-24.png" />
+    <Content Include="Resources\Icons\icons8-open-box-24.png" />
+    <Content Include="Resources\Icons\icons8-order-24.png" />
+    <Content Include="Resources\Icons\icons8-products-24.png" />
+    <Content Include="Resources\Icons\icons8-product_order-24.png" />
+    <Content Include="Resources\Icons\icons8-purchase-24.png" />
+    <Content Include="Resources\Icons\icons8-quality-24.png" />
+    <Content Include="Resources\Icons\icons8-reset-24.png" />
+    <Content Include="Resources\Icons\icons8-sale-24.png" />
+    <Content Include="Resources\Icons\icons8-sales-24.png" />
+    <Content Include="Resources\Icons\icons8-search-15.png" />
+    <Content Include="Resources\Icons\icons8-search-20.png" />
+    <Content Include="Resources\Icons\icons8-search-24.png" />
+    <Content Include="Resources\Icons\icons8-search_-24.png" />
+    <Content Include="Resources\Icons\icons8-search_product-24.png" />
+    <Content Include="Resources\Icons\icons8-shopping-cart-24.png" />
+    <Content Include="Resources\Icons\icons8-submit-20.png" />
+    <Content Include="Resources\Icons\icons8-total-sales-24.png" />
+    <Content Include="Resources\Icons\icons8-upload-image-100.png" />
+    <Content Include="Resources\Icons\icons8-upload-image-24.png" />
+    <Content Include="Resources\Icons\icons8-usd-order-reciept-invoice-bill-accounting-purchase-24.png" />
+    <Content Include="Resources\Icons\no-image-x300.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="ClosedXML">
+      <Version>0.102.3</Version>
+    </PackageReference>
+    <PackageReference Include="CsvHelper" Version="33.0.1" />
+    <PackageReference Include="DocX" Version="3.0.0" />
+    <PackageReference Include="EPPlus" Version="7.2.1" />
+    <PackageReference Include="iTextSharp" Version="5.5.13.4" />
+    <PackageReference Include="Microsoft.ReportingServices.ReportViewerControl.Winforms">
+      <Version>150.1652.0</Version>
+    </PackageReference>
+    <PackageReference Include="OfficeOpenXml.Core.ExcelPackage" Version="1.0.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Images\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
